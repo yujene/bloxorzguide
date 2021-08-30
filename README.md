@@ -58,16 +58,30 @@ Below is a table of how long it takes for each movement direction-configuration 
 ### Input Buffering
 Inputs can be pressed as a block or cube is moving to get the next movement out as soon as possible. The most recent direction input is used, so the previous direction input can continue to be held. For this reason, you can overlap your inputs to ensure direction changes on the next possible frame.
 
+<img src="images/movement/buffer.gif" width="544" height="425"/>
+
 ### Fast Split
 Previously thought swapping after splitting allowed block to move earlier, but I don't think this is true. I'll have to time this again.
 
 ### Fast Toggling
-Fast toggling is when you input a direction to a cube, toggle during the movement animation, then input a direction to the other cube. Theoretically, this allows moving both cubes at the same time. The time difference between initial direction input and toggling can range from 0ms to 217ms. 0ms is the fastest possible fast toggle, and anything after 217ms would be a regular toggle since the block has finished its moving animation.
+Fast toggling is when you input a direction to a cube, swap to second cube, then input a direction to the second cube before the first cube finishes its movement animation. This allows moving both cubes at the same time. The time difference between initial direction input and toggling can range from 0ms to 217ms. 0ms is the fastest possible fast toggle, and anything after 217ms would be a regular toggle since the block has finished its moving animation.
 
-![toggle](images/movement/toggle.gif)
-![fasttoggle](images/movement/fasttoggle.gif)
+The comparison below shows the difference between regular toggling and fast toggling respectively. Regular toggling sends an input to the second cube after the first cube's movement animation ends. Fast toggling swaps and sends an input to the second cube before the first cube's movement animation ends.
+
+<img src="images/movement/toggle.gif" width="544" height="425"/>
+<img src="images/movement/fast_toggle.gif" width="544" height="425"/>
+
+\
+The image below shows the timing difference between regular and fast toggling. The time row labels the time in frames assuming 30fps, or indicates a variable. Inputs are coloured blue. Red and green indicate the start and end of the corresponding cube movement animations. Orange shading indicates the region where the swap input can be done.
+
+<img src="images/movement/fast_toggle.png" width="850" height="600"/>
+
+The top timeline shows the timing of a regular toggle. Time begins when Right is sent to cube 1. The movement animation takes 6.5f. The variable x represents how long you wait after the first cube's animation before sending Right to the second cube. The range of x is `x >= 0`, so `x = 0` is the fastest regular toggle. The swap input can occur anywhere between time 0 and x.  
+The bottom timeline shows the timing of a fast toggle. The variable y represents how long you wait between Right inputs for each cube. The swap input can occur anywhere between time 0 and y.
 
 ### Chained Fast Toggling
+
+<img src="images/movement/chained_fast_toggle.gif" width="544" height="425"/>
 
 ----
 ## Glitches
