@@ -64,8 +64,8 @@ Previously thought swapping after splitting allowed block to move earlier, but I
 ### Fast Toggling
 Fast toggling is when you input a direction to a cube, toggle during the movement animation, then input a direction to the other cube. Theoretically, this allows moving both cubes at the same time. The time difference between initial direction input and toggling can range from 0ms to 217ms. 0ms is the fastest possible fast toggle, and anything after 217ms would be a regular toggle since the block has finished its moving animation.
 
-![toggle](images/movement/toggle.webm)
-![fasttoggle](images/movement/fasttoggle.webm)
+![toggle](images/movement/toggle.gif)
+![fasttoggle](images/movement/fasttoggle.gif)
 
 ### Chained Fast Toggling
 
