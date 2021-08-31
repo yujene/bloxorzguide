@@ -17,11 +17,15 @@ This document serves as a guide and knowledge base of the mechanics and strats f
 
 The contents of this document is based on information I've accumulated from running the game and doing experiments. If there's any missing, inaccurate, or unclear information in this document, contact me through discord dm yujene#6345 or the Bloxorz discord linked below.
 
+**Bloxorz New Discord:** https://discord.gg/4yw8MPPJmQ  
 **Bloxorz Old Discord:** https://discord.gg/zQQvZ3JmJM  
 **Bloxorz Leaderboard:** https://www.speedrun.com/bloxorz
 
 ----
 ## Basics
+### Game
+Use https://www.coolmathgames.com/0-bloxorz/play so you only have the game in the browser.
+
 ### Controls
 The block is moved using WASD or the arrow keys. They can be used interchangeably or at the same time.
 
