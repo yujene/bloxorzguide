@@ -64,8 +64,10 @@ Inputs can be pressed as a block or cube is moving to get the next movement out 
 
 <img src="images/movement/buffer.gif" width="544" height="425"/>
 
-### Fast Split
-Previously thought swapping after splitting allowed block to move earlier, but I don't think this is true. I'll have to time this again.
+\
+As the block, you can buffer space to stop while holding a direction. I don't know of any practical use of this.
+
+<img src="images/movement/buffer_space.gif" width="544" height="425"/>
 
 ### Fast Toggling
 Fast toggling is when you input a direction to a cube, swap to second cube, then input a direction to the second cube before the first cube finishes its movement animation. This allows moving both cubes at the same time. The time difference between initial direction input and toggling can range from 0ms to 217ms. 0ms is the fastest possible fast toggle, and anything after 217ms would be a regular toggle since the block has finished its moving animation.
@@ -89,8 +91,42 @@ The bottom timeline shows the timing of a fast toggle. The variable y represents
 
 ----
 ## Glitches
-### Instance Duplication
-### Stacking
+### Instance Duplication and Stacking
+#### How it works
+I'm still not sure exactly how this works in the code, but this is the best explanation I have for what's going on. After splitting the block into two cubes, making them fall off the edge at the same time causes the game to call the respawning code once per instance per cube. On the first time executing instance duplication, you end up with 2 instances because each cube calls the respawn code. On the nth time duplicating, you have two cubes of 2^(n-1) instances calling the respawn code resulting in 2^n instances. I'll be referring to how many times you do instance duplication by "n stacks" or "stacking n times".
+
+The left side of the image below shows why the instances duplicate in powers of two. The right side shows how you would only see one instance after stacking. This means that there's 2^n-1 instances you're also controlling but can't see.
+
+<img src="images/glitches/stacking.png" width="766" height="363"/>
+
+The table below shows the relation between stack number and number of instances.
+
+|Stack Number|Number of Instances|
+|-----|----:|
+|0|1|
+|1|2|
+|2|4|
+|3|8|
+|4|16|
+|5|32|
+
+#### Why is this useful
+The significance of instance duplication is that it allows for you to skip levels. When you complete a level with instance duplication, the levelNumber variable gets incremented per instance. This means you can complete a level with n stacks to skip 2^n-1 levels. For [example](https://youtu.be/Yj86HAkrAbU?t=78), completing stage 8 with 1 stack will skip the stage title animation and spawn you straight into stage 10.
+
+#### How to do it
+The basic idea is to make both cubes fall off the edge at the same time. This requires doing a non-fast toggle off the edge. This means sending movement input to the first cube, swap, then send movement input to the second cube after the first cube's movement animation has finished. For instance duplication, move the second cube once the first cube is in the falling animation. If you try sending a movement input to the second cube before the first cube's movement animation is finished, you'll see it snap back onto the tile.
+
+The video below sends a movement input to the top cube after 4 frames, so it snaps back on the tile.
+
+<img src="images/glitches/early_stack.gif" width="544" height="425"/>
+
+The video below sends a movement input to the top cube after 7 frames. I think this is the earliest possible frame for 30fps and 1 frame off optimal in 60fps.
+
+<img src="images/glitches/fast_stack.gif" width="544" height="425"/>
+
+#### Important note for moving after respawn
+Depending on how much you delayed the second cube's movement input, your duplicated set of instances will be desynchronized with your visible set upon respawning. You should be able to hear when both sets have landed. The block is not controllable for about 11 frames after the landing sound, so don't hold any direction until 11 frames after you hear all instances have landed to avoid desynchronizing.
+
 ### Menuing
 ### Desync Stacking
 
