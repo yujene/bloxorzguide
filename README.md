@@ -86,7 +86,6 @@ The top timeline shows the timing of a regular toggle. Time begins when Right is
 The bottom timeline shows the timing of a fast toggle. The variable y represents how long you wait between Right inputs for each cube. The swap input can occur anywhere between time 0 and y.
 
 ### Chained Fast Toggling
-
 <img src="images/movement/chained_fast_toggle.gif" width="544" height="425"/>
 
 ----
@@ -128,12 +127,54 @@ The video below sends a movement input to the top cube after 7 frames. I think t
 Depending on how much you delayed the second cube's movement input, your duplicated set of instances will be desynchronized with your visible set upon respawning. You should be able to hear when both sets have landed. The block is not controllable for about 11 frames after the landing sound, so don't hold any direction until 11 frames after you hear all instances have landed to avoid desynchronizing.
 
 ### Menuing
-
 The menuing glitch allows you to warp to stage 1 from any stage. This is accomplished by quitting to menu while dying. Pressing Quit to Menu sets the levelNumber to 1 and attempts to load into the main menu. Dying triggers the code that tries to load the level using the levelNumber variable and this overrides the attempt to get to the main menu. When the menuing glitch is done correctly, you load into stage 1 after dying with no stage title cutscene. The video below shows the menuing glitch being used in stage 2.
 
 <img src="images/glitches/menuing.gif" width="768" height="432"/>
 
 ### Desync Stacking
+#### What is this
+Desync stacking is executing instance duplication on some of the instances instead of all instances. Normally, all instances are synchronized, so instance duplication doubles the total number of instances. Currently, I only have a setup and practical use for doing desync stacking with half of the instances to multiply the number of instances by 1.5 instead of 2 for normal stacking.
+
+The way to make this work is to desynchronize the position of half of the instances with the other half. Then, you have to do instance duplication on half of the instances while the other half stays on the platform. For the last move of instance duplication on the first half of instances, it shouldn't matter if the other half dies since all of them will respawn together into the same spot.
+
+The image below shows how desync stacking is able to multiply the number of instances by 1.5 instead of 2. The first step is regular instance duplication, so the number of instances double. The next step is desync stacking to multiply the number of instances by 1.5.
+
+<img src="images/glitches/desync_stacking.png" width="766" height="363"/>
+
+#### How to do it
+Desync stacking is only possible if you have at least 2 instances because you need two sets of instances to work with. I'll be showing how to desync stack on stage 8.
+
+This is what it looks like to successfully desync stack if you do it with 1 stack. You get warped to stage 11 since 1 stack + 1 desync stack is 3 instances as shown in the image above. Note: the way I complete the stage at the end of the gif is not optimal.
+
+<img src="images/glitches/desync_stacking.gif" width="768" height="432"/>
+
+\
+Now I'll show each step of what's happening in the video above with an explanation of the inputs and visual of what each instance looks like. The left side will be the visible half of instances, and right side will be the invisible half of instances.
+
+When you do your last stack before doing desync stack, your original instances will spawn at a different time than the duplicated instances. This time difference should be how long you waited before killing the second cube during stacking. As you're respawning, hold right until the visible block has started its movement animation. You should also be able to hear the invisible instance hitting the split tile. If you let go of right at the correct time, the visible block should be lying flat and invisible instances should have the cubes in the default splitting destinations.
+
+<img src="images/glitches/step1.gif" width="768" height="432"/>
+
+\
+Before the next step, you have to wait until the invisible cubes are controllable after the split. I have no clue how long you have to wait.
+
+Fast method: After waiting, press left, fast toggle right. The top invisible cube moves left, and the bottom moves right. Since you fast toggled, the visible block only moves left once.
+
+Easier alternative: Press left, space, right without fast toggling. The invisible cubes should do the exact same thing. Only difference is that the visible block will move left, then right. Note: the video below shows how it should look for fast method.
+
+<img src="images/glitches/step2.gif" width="768" height="432"/>
+
+\
+Fast method: Press right, space, left not fast toggled. This kills both invisible cubes while the visible block moves and returns to spawn position.
+
+Easier alternative: Press space, left, space, right, left. The first space swaps to control top invisible cube. Left, space, right kills both invisible cubes and leaves the visible block lying flat. The final left input brings the visible block back to spawn position. Note: the fast and easy strats converge after this step, so the image is the same now
+
+It's important that the visible block returns to spawn position so all instances are synchronized once the new duplicated instances spawn.
+
+<img src="images/glitches/step3.gif" width="768" height="432"/>
+
+\
+Wait until you hear all instances landing, then solve stage 8 with any strat.
 
 ----
 ## Glitchless Guide
