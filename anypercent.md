@@ -8,28 +8,36 @@
 
 ----
 ### 10 Levels
-This category's routing currently does stages 1-7, and 10 using glitchless strats.
+**Required tech:** [Instance Duplication](https://github.com/yujene/bloxorzguide#instance-duplication-and-stacking)
 
-**The Skip:** On stage 8, we need to stack once to skip to stage 10.
+This category's routing currently does stages 1-7, and 10 using glitchless strats. On stage 8, we can skip to stage 10.
 
-// video of stacking on stage 8
-
-**Video Description:** Move right until the block is split. Fast split, then fast toggle until both cubes are on the edge. Kill both cubes to get a stack of instance duplication.
-
-**Notes:** Before moving after respawning, ensure both instances are synced by listening for both blocks to land. After syncing both instances, solve stage 8 using glitchless strats.
+On stage 8, stack once then complete the stage with glitchless strats to warp to stage 10. This [video](https://youtu.be/Yj86HAkrAbU?t=78) shows the skip.
 
 ----
 ### 20 Levels
-This category's routing currently does stages 1-7, and 20 using glitchless strats. From stage 8, we can skip to stage 20.
+**Required tech:** [Instance Duplication](https://github.com/yujene/bloxorzguide#instance-duplication-and-stacking), [Desync Stacking](https://github.com/yujene/bloxorzguide#desync-stacking)
+
+This category's routing currently does stages 1-7, and 20 using glitchless strats. On stage 8, we can skip to stage 20.
+
+To skip from stage 8 to 20, we need 12 instances. Since 12 = 2x2x2x1.5, we need to use desync stacking. In this [video](https://youtu.be/G4DKBixYwkU?t=79), 12 instances are made by stacking 3 times then desync stacking once. However, the earlier we desync stack, the less instances we will have during the stacking process. Having less instances while stacking should decrease time lost to lag from high instance counts. The table below shows the number of instances during the stacking process depending on when desync stacking is done. This is indicated by the order of the multiplication in the first column. 2 indicates a normal stack and 1.5 indicates desync stack.
+
+|Stack Order|Number of Instances|
+|-----|-----|
+|2 x 2 x 2 x 1.5|1, 2, 4, 8, 12|
+|2 x 2 x 1.5 x 2|1, 2, 4, 6, 12|
+|2 x 1.5 x 2 x 2|1, 2, 3, 6, 12|
+
+Since desync stacking requires 2 instances, the earliest and best order is stack once, desync stack once, stack twice. After stacking up to 12 instances, complete stage 8 to warp to 20.
 
 ----
 ### 33 Levels
-This category's routing currently does stages 1-7, and 33 using glitchless strats.
+**Required tech:** [Instance Duplication](https://github.com/yujene/bloxorzguide#instance-duplication-and-stacking), [Menuing](https://github.com/yujene/bloxorzguide#menuing)
 
-**The Skip:** On stage 8, we need to stack five times, QTM while dying, then complete stage 1 to skip to stage 33.
+This category's routing currently does stages 1-7, and 33 using glitchless strats. On stage 8, we can skip to stage 33.
 
-// video of fifth stack, QTM and die, complete stage 1
+On stage 8, stack 5 times to get 32 instances. To be able to skip to 33, we need the levelNumber to become 1 since 1+32=33. This requires pressing Quit to Menu to set the levelNumber to 1 while reloading the stage. The two known ways to reload the stage for this skip are dying or completing the stage.
 
-**Video Description:** Video starts on the fifth stack, and the game slows significantly at this point since there's 32 instances. Once the blocks from all instances have audibly dropped, press left and quit to menu. Solve stage 1 using glitchless strats.
+Fast method: with 32 instances, do the chained fast toggled glitchless stage 8 strat to complete the stage. Doing this optimally should be a bit easier since the game should be very laggy with 5 stacks. As you complete the stage, press Quit to Menu. This sets the levelNumber to 1 as the game tries to load the next stage and warps you to 33. This [video](https://youtu.be/nD28sogw0K4?t=78) shows this method with unoptimal stage 8 strat but shows the skip.
 
-**Notes:** Stacking five times skips 32 stages because 2^5=32. We QTM and die to set the level number to 1, which allows us to add 32 to skip to 33. If you only QTM without dying, you skip to stage 32, and I have no clue why.
+Slower method: with 32 instances, fall off stage 8 and Quit to Menu. This sets the levelNumber to 1, and dying reloads the stage. You'll respawn on stage 1 with 32 instances. Complete stage 1 and warp to 33. This [video](https://youtu.be/Bl1jaWTkQ5E?t=78) shows the skip with this method.

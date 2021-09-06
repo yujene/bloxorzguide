@@ -101,7 +101,7 @@ The left side of the image below shows why the instances duplicate in powers of 
 The table below shows the relation between stack number and number of instances.
 
 |Stack Number|Number of Instances|
-|-----|----:|
+|----|----|
 |0|1|
 |1|2|
 |2|4|
