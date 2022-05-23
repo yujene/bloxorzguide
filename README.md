@@ -147,9 +147,13 @@ The video below sends a movement input to the top cube after 7/30 seconds. I thi
 Depending on how much you delayed the second cube's movement input, your duplicated set of instances will be desynchronized with your visible set upon respawning. You should be able to hear when both sets have landed. The block is not controllable for about 11 frames after the landing sound, so don't hold any direction until 11 frames after you hear all instances have landed to avoid desynchronizing.
 
 ### Menuing
-The menuing glitch allows you to warp to stage 1 from any stage. This is accomplished by quitting to menu while dying. Pressing Quit to Menu sets the levelNumber to 1 and attempts to load into the main menu. Dying triggers the code that tries to load the level using the levelNumber variable and this overrides the attempt to get to the main menu. When the menuing glitch is done correctly, you load into stage 1 after dying with no stage title cutscene. The video below shows the menuing glitch being used in stage 2.
+The menuing glitch allows you to set your levelNumber to 1 from any stage. This is accomplished by quitting to menu while in an animation of something that will try to reload the stage. Pressing Quit to Menu sets the levelNumber to 1 and attempts to load into the main menu.
+
+Dying triggers the code that tries to load the level using the levelNumber variable and this overrides the attempt to get to the main menu. When the menuing glitch is done correctly, you load into stage 1 after dying with no stage title cutscene. The video below shows the menuing glitch being used while dying.
 
 <img src="images/glitches/menuing.gif" width="768" height="432"/>
+
+Alternatively, you can do the menuing glitch while completing a stage. The difference is that after the levelNumber gets set to 1, it increments by the number of instances that completed the stage, then loads with the new value. In this 33 Level Any% [run](https://youtu.be/iqzBlZVZybw?t=113), you can see 32 instances completing the stage as the menuing glitch is done. Since the levelNumber gets set to 1, you add 32 to load into stage 33.
 
 ### Desync Stacking
 #### What is this
