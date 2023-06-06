@@ -15,7 +15,7 @@ _by yujene_
 ## Introduction
 This document serves as a guide and knowledge base of the mechanics and strats for speedrunning Bloxorz. It will assume that you have a basic understanding of how the game works, but some basics will be included as relevant prerequisite information.
 
-The contents of this document is based on information I've accumulated from running the game and doing experiments. If there's any missing, inaccurate, or unclear information in this document, contact me through discord dm yujene#6345 or the Bloxorz discord linked below.
+The contents of this document is based on information I've accumulated from running the game and doing experiments. If there's any missing, inaccurate, or unclear information in this document, contact me through discord dm (username yujene) or the Bloxorz discord linked below.
 
 **Bloxorz New Discord:** https://discord.gg/4yw8MPPJmQ  
 **Bloxorz Old Discord:** https://discord.gg/zQQvZ3JmJM  
